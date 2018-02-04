@@ -7,6 +7,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn -v'
+                sh 'mvn package'
+                sh 'java -cp target/myartifact-0.0.1-SNAPSHOT.jar mygroup.myartifact.App'
             }
         }
     }
